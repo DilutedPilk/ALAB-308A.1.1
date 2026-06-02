@@ -28,34 +28,31 @@ const text = document.getElementById("text");
 
 function primeNumber(n) {
     const arr = []
-    const isPrime =[];
-    for (let i = 1; i <=n; i++){
-        // if (n % i === 0){
-        //     break;
-        // } else {
-        //     arr.push(n)
-        // }
+    const isPrime = [];
+    for (let i = 1; i < n; i++){
         arr.push(i);
     }
-
+    console.log(arr);
     for (let i = 0; i < arr.length; i++){
         let prime;
-        for(let x = 2; x <= 100; x++){
-            if (x % arr[i] === 0) {
+        for(let x = 2; x <= arr.length+1; x++){
+            if (arr[i] % x === 0 && x != arr[i]) {
                 prime = false
                 break;
-            } else {
+            } else if (x === arr[i]){
                 prime = true;
+                break;
             }
         }
         if (prime === true){
             isPrime.push(arr[i]);
         }
     }
+    alert("Calculation complete!")
     return isPrime;
 }
 
-console.log(primeNumber(25));
+
 
 // Once complete, use the alert() method to alert the user that the calculation is finished.
 
