@@ -48,10 +48,24 @@ function primeNumber(n) {
             isPrime.push(arr[i]);
         }
     }
-    alert("Calculation complete!")
     return isPrime;
 }
 
+text.addEventListener("click", (e) =>{
+    e.preventDefault();
+    const submit = document.getElementById('submit');
+    const input = document.querySelector('input')
+    const answer = document.getElementById('answer')
+    if (e.target === submit) {
+        if (primeNumber(input.value).length == 0){
+            alert("Input is not a number")
+        } else {
+            const prime = primeNumber(input.value);
+            alert("Calculation complete!")
+            answer.textContent = prime.join(", ")
+        }
+    }
+})
 
 
 // Once complete, use the alert() method to alert the user that the calculation is finished.
