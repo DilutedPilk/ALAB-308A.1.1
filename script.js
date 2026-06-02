@@ -61,8 +61,8 @@ text.addEventListener("click", (e) =>{
             alert("Input is not a number")
         } else {
             const prime = primeNumber(input.value);
-            alert("Calculation complete!")
             answer.textContent = prime.join(", ")
+            setTimeout(()=>{alert("Calculation complete!")}, 0)
         }
     }
 })
